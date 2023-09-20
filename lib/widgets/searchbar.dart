@@ -10,8 +10,11 @@ class SearchBar extends ConsumerStatefulWidget {
 }
 
 class _SearchBarState extends ConsumerState<SearchBar> {
+  // function for finding seatnumber
   void searchSeat(String value, WidgetRef ref) {
-    ref.read(searchTextProvider.notifier).update((state) => value);
+    ref
+        .read(searchTextProvider.notifier)
+        .update((state) => value); // read the changes in input field
   }
 
   @override
@@ -20,6 +23,7 @@ class _SearchBarState extends ConsumerState<SearchBar> {
         TextEditingController(); //search bar controller
     return Stack(alignment: AlignmentDirectional.topEnd, children: [
       TextField(
+        //take seat number from user
         onSubmitted: (value) {
           searchSeat(value, ref);
         },
@@ -37,15 +41,29 @@ class _SearchBarState extends ConsumerState<SearchBar> {
         ),
       ),
       InkWell(
+        // search button for finding seat
         onTap: () {
           FocusScope.of(context).unfocus();
-          searchSeat(_controller.text, ref);
+
+          if (_controller.text == '') {
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text("Pleas enter valid seat number"),
+              margin: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).size.height - 225,
+                  right: 20,
+                  left: 20),
+              behavior: SnackBarBehavior.floating,
+              backgroundColor: Colors.blue[400],
+            ));
+          } else {
+            searchSeat(_controller.text, ref);
+          }
         },
         child: Container(
           height: 64,
           width: 100,
           decoration: BoxDecoration(
-            color: Colors.blue.withOpacity(0.5),
+            color: Colors.blue[400],
             boxShadow: const [
               BoxShadow(
                 color: Colors.transparent,

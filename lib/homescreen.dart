@@ -9,6 +9,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        //to remove renderpixel flow
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
@@ -18,6 +19,7 @@ class HomeScreen extends StatelessWidget {
                 height: 30,
               ),
               Text(
+                // heading
                 "Seat Finder",
                 style: TextStyle(
                   fontSize: 30,
@@ -28,10 +30,11 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const SearchBar(),
+              const SearchBar(), //search bar for finding seat number
               const SizedBox(
                 height: 20,
               ),
+              // Cabin widget is a group of 8 seats in one cabin
               const CabinWidget(index: 0),
               const CabinWidget(index: 1),
               const CabinWidget(index: 2),

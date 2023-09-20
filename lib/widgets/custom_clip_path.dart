@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class MyCustomClipperFromTop extends CustomClipper<Path> {
   @override
+  // upper border widget of cabin
   Path getClip(Size size) {
     double height = size.height * 0.7;
     double width = size.width;
@@ -25,6 +26,7 @@ class MyCustomClipperFromTop extends CustomClipper<Path> {
 
 class MyCustomClipperFromBottom extends CustomClipper<Path> {
   @override
+  //lower border widget for cabin
   Path getClip(Size size) {
     double height = size.height * 0.3;
     double width = size.width;

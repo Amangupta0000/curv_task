@@ -16,8 +16,9 @@ class Seats extends StatefulWidget {
 }
 
 class _SeatsState extends State<Seats> {
-  Seat seat = Seat();
+  Seat seat = Seat(); // instance of seat cleass
   @override
+  // initialise the seat class data memebers
   void initState() {
     seat = Seat(seatIndex: widget.seatIndex, seatType: widget.seatType);
     super.initState();
@@ -25,6 +26,7 @@ class _SeatsState extends State<Seats> {
 
   @override
   Widget build(BuildContext context) {
+    // seat  widget
     return Container(
       height: 60,
       width: 60,
@@ -38,10 +40,12 @@ class _SeatsState extends State<Seats> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            widget.seatIndex.toString(),
+            widget.seatIndex.toString(), //seat number
             style: TextStyle(
               fontSize: 16,
-              color: (widget.searchBarText == widget.seatIndex.toString())
+              color: (widget.searchBarText ==
+                      widget.seatIndex
+                          .toString()) // color of seat text change on search seat number
                   ? Colors.white
                   : const Color(0xff126DCA),
               fontWeight: FontWeight.bold,
@@ -49,10 +53,12 @@ class _SeatsState extends State<Seats> {
           ),
           const SizedBox(height: 4),
           Text(
-            widget.seatType,
+            widget.seatType, //seat type
             style: TextStyle(
               fontSize: 12,
-              color: (widget.searchBarText == widget.seatIndex.toString())
+              color: (widget.searchBarText ==
+                      widget.seatIndex
+                          .toString()) // color of seat text change on search seat number
                   ? Colors.white
                   : const Color(0xff126DCA),
               fontWeight: FontWeight.normal,

@@ -1,4 +1,5 @@
 class Seat {
+  // Seat class
   int? seatIndex;
   String? seatType;
 
