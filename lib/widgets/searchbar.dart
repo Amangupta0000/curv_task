@@ -16,16 +16,11 @@ class _SearchBarState extends ConsumerState<SearchBar> {
 
   @override
   Widget build(BuildContext context) {
-    final _controller = TextEditingController();
-    String? text = _controller.text;
-    var isTyping = true;
+    TextEditingController _controller =
+        TextEditingController(); //search bar controller
     return Stack(alignment: AlignmentDirectional.topEnd, children: [
       TextField(
         onSubmitted: (value) {
-          setState(() {
-            isTyping = false;
-          });
-          print(isTyping);
           searchSeat(value, ref);
         },
         maxLength: 2,
@@ -50,8 +45,7 @@ class _SearchBarState extends ConsumerState<SearchBar> {
           height: 64,
           width: 100,
           decoration: BoxDecoration(
-            color:
-                (text == '') ? Colors.grey[400] : Colors.blue.withOpacity(0.5),
+            color: Colors.blue.withOpacity(0.5),
             boxShadow: const [
               BoxShadow(
                 color: Colors.transparent,
