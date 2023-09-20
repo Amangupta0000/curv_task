@@ -1,16 +1,9 @@
 # cruv_task
+I first created the seat model class withseat number & seat type as parameter.
+then seat widget which takes seat number, seat type ,search bar text.
+then cabin widget which is a group of 8 seat widgets and giving seat type , seat index,searchbartext.
+In this task , I use riverpod package to pass the user input seat number to cabin widget  so that seat color changes when user search the specific seat number.
+I used stateprovider class of riverpod which read the changes in searchBar field.
+I user press search button without typing any seat number then a snackbar is shown to tell user enter valid seat number.
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Thankyou..
